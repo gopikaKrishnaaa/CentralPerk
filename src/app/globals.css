@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --color-monica-purple: #7B3F98;
+  --color-central-orange: #F28C28;
+  --color-coffee-brown: #4A2C2A;
+  --color-cream-white: #FFF8F0;
+  --color-charcoal-black: #121212;
+  --color-luxury-gold: #D4AF37;
+  
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+  
+  --animate-neon-pulse: neon-pulse 2s infinite alternate;
+}
+
+@keyframes neon-pulse {
+  from {
+    text-shadow: 0 0 4px rgba(242, 140, 40, 0.4),
+                 0 0 12px rgba(242, 140, 40, 0.2);
+  }
+  to {
+    text-shadow: 0 0 8px rgba(242, 140, 40, 0.8),
+                 0 0 20px rgba(242, 140, 40, 0.4),
+                 0 0 30px rgba(242, 140, 40, 0.2);
+  }
+}
+
+:root {
+  --background: #121212;
+  --foreground: #FFF8F0;
+  
+  --font-playfair: "Playfair Display";
+  --font-poppins: "Poppins";
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Design System Utility Classes */
+
+/* Subtle rustic brick wall pattern */
+.brick-wall-bg {
+  background-color: #120b0a;
+  background-image: 
+    linear-gradient(rgba(18, 11, 10, 0.9), rgba(10, 6, 5, 0.97)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60' viewBox='0 0 120 60'%3E%3Cpath d='M0 0h60v30H0V0zm60 30h60v30H60V30z' fill='%23221311' fill-opacity='0.25'/%3E%3Cpath d='M0 29h120v2H0v-2zm59-29v30h2V0h-2zm60 30v30h-2V30h2z' fill='%230b0504' fill-opacity='0.5'/%3E%3C/svg%3E");
+}
+
+/* Premium Glassmorphism */
+.glass-panel {
+  background: rgba(30, 20, 18, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 248, 240, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(45, 30, 27, 0.75);
+  border-color: rgba(242, 140, 40, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Neon Text Glows */
+.neon-text-orange {
+  color: #F28C28;
+  text-shadow: 0 0 5px rgba(242, 140, 40, 0.6),
+               0 0 15px rgba(242, 140, 40, 0.3),
+               0 0 30px rgba(242, 140, 40, 0.1);
+}
+
+.neon-text-purple {
+  color: #a858db;
+  text-shadow: 0 0 5px rgba(123, 63, 152, 0.6),
+               0 0 15px rgba(123, 63, 152, 0.3),
+               0 0 30px rgba(123, 63, 152, 0.1);
+}
+
+/* Neon Border Glows */
+.neon-border-orange {
+  border-color: rgba(242, 140, 40, 0.4);
+  box-shadow: 0 0 10px rgba(242, 140, 40, 0.15),
+              inset 0 0 10px rgba(242, 140, 40, 0.05);
+}
+
+.neon-border-orange-hover:hover {
+  border-color: #F28C28;
+  box-shadow: 0 0 15px rgba(242, 140, 40, 0.4),
+              inset 0 0 10px rgba(242, 140, 40, 0.1);
+}
+
+.neon-border-purple {
+  border-color: rgba(123, 63, 152, 0.4);
+  box-shadow: 0 0 10px rgba(123, 63, 152, 0.15),
+              inset 0 0 10px rgba(123, 63, 152, 0.05);
+}
+
+.neon-border-purple-hover:hover {
+  border-color: #7B3F98;
+  box-shadow: 0 0 15px rgba(123, 63, 152, 0.4),
+              inset 0 0 10px rgba(123, 63, 152, 0.1);
+}
+
+/* Premium custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #120b0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #4A2C2A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F28C28;
+}
+
+/* Elegant gold/amber buttons */
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-premium::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.75s;
+  opacity: 0;
+}
+
+.btn-premium:hover::after {
+  left: 125%;
+  opacity: 1;
+}
