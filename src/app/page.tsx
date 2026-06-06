@@ -103,11 +103,16 @@ export default function Home() {
       {/* 1. HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <img
-            src="/images/hero.gif"
-            alt="Central Perk Cozy Couch Backdrop"
-            className="w-full h-full object-cover object-center scale-105 select-none"
-          />
+          <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="w-full h-full object-cover object-center scale-105 select-none"
+>
+  <source src="/images/hero.webm" type="video/webm" />
+  <source src="/images/hero.gif" type="image/gif" />
+</video>
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal-black/60 via-charcoal-black/85 to-charcoal-black z-10" />
         </div>
 
