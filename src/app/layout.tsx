@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   description: "Experience premium American comfort food, artisan coffee, and the nostalgic New York coffeehouse culture in the heart of Chennai. Book your orange couch spot today.",
   keywords: ["Central Perk Chennai", "Friends Cafe Chennai", "American Restaurant Chennai", "Theme Cafe Chennai", "Best Coffee Chennai"],
   authors: [{ name: "Central Perk Chennai" }],
+  icons: {
+    icon: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({
